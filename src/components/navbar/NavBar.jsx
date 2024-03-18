@@ -71,7 +71,7 @@ function Navbar() {
             <>
               <span>Sign in</span>
               <Link className="link" to="/register">
-                <button>Join</button>
+                <button className={active || pathname !== "/" ? "button active" : "button"}>Join</button>
               </Link>
             </>
           )}
