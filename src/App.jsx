@@ -2,15 +2,15 @@ import React from "react";
 import NavBar from "./components/navbar/NavBar";
 import Footer from "./components/footer/footer";
 import Home from "./pages/home/Home";
-import Gigs from "./pages/gigs/Gigs";
-import Gig from "./pages/gig/Gig";
+import Skills from "./pages/skills/Skills";
+import Skill from "./pages/skill/Skill";
 import Login from "./pages/login/Login";
 import Register from "./pages/register/Register";
 import Add from "./pages/add/add";
-import Orders from "./pages/orders/Orders";
+import Lessons from "./pages/lessons/Lessons";
 import Messages from "./pages/messages/Messages";
 import Message from "./pages/message/Message";
-import MyGigs from "./pages/myGigs/MyGigs";
+import MySkills from "./pages/mySkills/MySkills";
 import "./App.scss";
 
 import {
@@ -41,16 +41,16 @@ function App() {
           element: <Home />,
         },
         {
-          path: "/gigs",
-          element: <Gigs />,
+          path: "/skills",
+          element: <Skills />,
         },
         {
-          path: "/myGigs",
-          element: <MyGigs />,
+          path: "/myskills",
+          element: <MySkills />,
         },
         {
-          path: "/orders",
-          element: <Orders />,
+          path: "/lessons",
+          element: <Lessons />,
         },
         {
           path: "/messages",
@@ -65,8 +65,8 @@ function App() {
           element: <Add />,
         },
         {
-          path: "/gig/:id",
-          element: <Gig />,
+          path: "/skill/:id",
+          element: <Skill />,
         },
       ],
     },

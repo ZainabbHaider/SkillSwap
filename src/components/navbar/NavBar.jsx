@@ -19,13 +19,13 @@ function Navbar() {
     };
   }, []);
 
-  // const currentUser = null
+  const currentUser = null
 
-  const currentUser = {
-    id: 1,
-    username: "Anna",
-    isSeller: true,
-  };
+  // const currentUser = {
+  //   id: 1,
+  //   username: "Anna",
+  //   isSeller: true,
+  // };
 
   return (
     <div className={active || pathname !== "/" ? "navbar active" : "navbar"}>
@@ -41,23 +41,23 @@ function Navbar() {
           <span>Community</span>
           <span>Learn a skill</span>
           <span>Exchange services</span>
-          {!currentUser?.isSeller && <span>Become Member</span>}
+          {!currentUser?.isSeller || currentUser != null && <span>Become Member</span>}
           {currentUser ? (
             <div className="user" onClick={()=>setOpen(!open)}>
               <span>{currentUser?.username}</span>
               {open && <div className="options">
                 {currentUser.isSeller && (
                   <>
-                    <Link className="link" to="/mygigs">
-                      Gigs
+                    <Link className="link" to="/myskills">
+                      Skills
                     </Link>
                     <Link className="link" to="/add">
-                      Add New Gig
+                      Add New Skills
                     </Link>
                   </>
                 )}
-                <Link className="link" to="/orders">
-                  Orders
+                <Link className="link" to="/lessons">
+                  Lessons
                 </Link>
                 <Link className="link" to="/messages">
                   Messages
@@ -104,6 +104,9 @@ function Navbar() {
             </Link>
             <Link className="link menuLink" to="/">
               Cooking
+            </Link>
+            <Link className="link menuLink" to="/">
+              Lifestyle
             </Link>
           </div>
           <hr />

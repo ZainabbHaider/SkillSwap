@@ -7,28 +7,27 @@ export const cards = [
     },
     {
       id: 2,
-      title: "Musical Intruments",
-      desc: "Serenade the world",
-      img: "https://images.pexels.com/photos/6671387/pexels-photo-6671387.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    },
-    
-    {
-      id: 3,
       title: "Graphic Design",
-      desc: "Customize your needs",
+      desc: "Illustrate your needs",
       img: "https://images.pexels.com/photos/5054208/pexels-photo-5054208.jpeg?auto=compress&cs=tinysrgb&w=600",
     },
     {
-      id: 4,
+      id: 3,
       title: "Cooking",
       desc: "Unlock the flavors of the world",
       img: "https://images.pexels.com/photos/3622643/pexels-photo-3622643.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     },
     {
-      id: 5,
+      id: 4,
       title: "Handycrafs",
       desc: "Craft your style",
       img: "https://images.pexels.com/photos/2973399/pexels-photo-2973399.jpeg?auto=compress&cs=tinysrgb&w=600",
+    },
+    {
+      id: 5,
+      title: "Musical Intruments",
+      desc: "Serenade the world",
+      img: "https://images.pexels.com/photos/6671387/pexels-photo-6671387.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     },
     {
       id: 6,

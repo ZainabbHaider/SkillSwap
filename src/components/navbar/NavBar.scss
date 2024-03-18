@@ -12,23 +12,33 @@
     color: #011a3f;
   }
   .container {
-    width: 1400px;
+    width: 100%;
     // background-color: lawngreen;
     display: flex;
     justify-content: space-between;
-    padding: 10px 0px;
+    // padding: 10px 100px 20px 100px;
+    // padding-left: 100px;
 
     .logo {
-      font-size: 50px;
+      font-size: 60px;
       // font-weight: bold;
       font-family: "Playfair Display", serif;
+      // display: flex;
+      // align-items: center;
+      // gap: 10px;
+      // justify-content: center;
+      padding-left: 200px;
+      padding-top: 10px;
       .text {
         padding-top: 0px;
-        font-family: "Roboto Slab", serif;
+        // padding-left: 100px;
+        font-family: "Playfair Display", serif;
       }
       img{
+        // margin-left: 100px;
+        // padding-right: 0px;
         width: 70px;
-        height: 60px;
+        height: 67px;
         margin-right: 5px;
         margin-top: 5px;
         padding-top: 10px;
@@ -40,6 +50,8 @@
       align-items: center;
       font-weight: 500;
       font-family: "Playfair Display", serif;
+      font-size: 18px;
+      padding-right: 100px;
       .user {
         display: flex;
         align-items: center;
@@ -87,15 +99,24 @@
     border: 0.5px solid rgb(94, 93, 93);
   }
   .menu {
-    width: 1400px;
+    width: 100%;
     padding: 10px 0px;
     display: flex;
     justify-content: space-between;
+    gap: 0px;
     font-weight: 300;
     color: gray;
     font-family: "Playfair Display", serif;
+    // align-items: center;
+    margin-left: 200px;
+    margin-right: 200px;
     span {
       font-family: "Roboto Slab", serif;
+    }
+    .menuLink{
+      padding-left: 50px;
+      padding-right: 50px;
+      
     }
   }
 }
