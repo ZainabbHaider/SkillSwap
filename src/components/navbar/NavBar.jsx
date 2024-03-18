@@ -32,6 +32,7 @@ function Navbar() {
       <div className="container">
         <div className="logo">
           <Link className="link" to="/">
+            <img src={active || pathname !== "/" ? "/imgs/bluelogo2.png": "/imgs/whitelogo2.png"} alt="logo" />
             <span className="text">SkillSwap</span>
           </Link>
         </div>

@@ -3,7 +3,9 @@ import './footer.scss'
 
 function footer() {
   return (
+    
     <div className='footer'>
+      <hr/>
       <div className="conatiner">
         <div className="top">
           <div className="item">
@@ -33,7 +35,15 @@ function footer() {
             <span>Podcast</span>
             <span>Community Standards</span>
           </div>
-
+          <div className="item">
+            <h2> Contact Us </h2>
+            <span>Email</span>
+            <span>Address</span>  
+            <span>Location</span>
+            {/* <span>Blogs</span>
+            <span>Podcast</span>
+            <span>Community Standards</span> */}
+          </div>
         </div>
         <hr/>
         <div className="bottom">
