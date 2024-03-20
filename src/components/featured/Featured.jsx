@@ -6,7 +6,7 @@ function Featured() {
     <div className='featured'>
         <div className="container">
             <div className="left">
-                <h1>Discover, Connect, Exchange: <i>Find Your Skills on SkillSwap</i></h1>
+                <h1>Discover, Connect, Exchange: <i>Learn New Skills on SkillSwap</i></h1>
                 <div className="search">
                     <div className="searchInput">
                         <img src="./imgs/search.png" alt=""/>

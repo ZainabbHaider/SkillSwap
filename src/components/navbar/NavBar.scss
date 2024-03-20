@@ -22,28 +22,24 @@
     // padding-left: 100px;
 
     .logo {
-      font-size: 60px;
-      // font-weight: bold;
-      font-family: "Playfair Display", serif;
-      // display: flex;
-      // align-items: center;
-      // gap: 10px;
-      // justify-content: center;
-      padding-left: 200px;
-      padding-top: 10px;
+      display: flex;
+      align-items: center; /* Align items vertically */
+      padding-left: 10%;
+      padding-top: 1%;
+      padding-bottom: 0.5%;
+    
       .text {
-        padding-top: 0px;
-        // padding-left: 100px;
+        margin-top: 0;
+        margin-bottom: 0; /* Reset margin */
+        font-size: 60px; /* Adjust font size as needed */
         font-family: "Playfair Display", serif;
+        margin-left: 10px; /* Add margin to create space between text and image */
       }
-      img{
-        // margin-left: 100px;
-        // padding-right: 0px;
-        width: 70px;
-        height: 67px;
-        margin-right: 5px;
-        margin-top: 5px;
-        padding-top: 10px;
+    
+      img {
+        width: 50px;
+        height: auto; /* Maintain aspect ratio */
+        margin-top: 0;
       }
     }
     .links {
@@ -53,7 +49,7 @@
       font-weight: 500;
       font-family: "Playfair Display", serif;
       font-size: 18px;
-      padding-right: 100px;
+      padding-right: 5%;
       .user {
         display: flex;
         align-items: center;
@@ -102,26 +98,30 @@
   hr {
     width: 100%;
     height: 0;
-    border: 0.5px solid rgb(94, 93, 93);
+    border: 0.5px solid rgb(221, 221, 221);
+    
   }
   .menu {
     width: 100%;
     padding: 10px 0px;
     display: flex;
-    justify-content: space-between;
-    gap: 0px;
+    // justify-content: space-between;
+    // gap: 0px;
     font-weight: 300;
     color: gray;
     font-family: "Playfair Display", serif;
     // align-items: center;
-    margin-left: 200px;
-    margin-right: 200px;
+    margin-left: 20%;
+    // margin-right: 20%;
+    // margin: auto;
     span {
       font-family: "Roboto Slab", serif;
     }
     .menuLink{
-      padding-left: 50px;
-      padding-right: 50px;
+      padding-left: 2%;
+      padding-right: 2%;
+        
+      // font-family: "Roboto Slab", serif;
       
     }
   }

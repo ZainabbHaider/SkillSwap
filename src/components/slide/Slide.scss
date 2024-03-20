@@ -4,7 +4,9 @@
     // padding: 50px 0px;
 
     .container{
-        width: 1400px;
+        width: 100%;
+        padding-left: 12%;
+        padding-right: 8.1%;
     }
 
     .carousel-prev, .carousel-next{
@@ -18,4 +20,5 @@
         cursor: pointer;
         color: blue;
     }
+
 }

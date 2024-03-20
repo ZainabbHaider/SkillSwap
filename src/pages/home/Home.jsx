@@ -13,7 +13,7 @@ function Home() {
     <h2>Popular Skills</h2>
     </div>
     
-    <Slide slidesToShow={4} arrowsScroll={4}>
+    <Slide slidesToShow={5} arrowsScroll={5}>
         {cards.map(card=>(
             <CategoryCard item={card} key={card.id}/>
         ))}   

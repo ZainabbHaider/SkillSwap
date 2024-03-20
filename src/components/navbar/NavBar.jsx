@@ -19,7 +19,7 @@ function Navbar() {
     };
   }, []);
 
-  const currentUser = null
+  const currentUser = null;
 
   // const currentUser = {
   //   id: 1,
@@ -32,7 +32,14 @@ function Navbar() {
       <div className="container">
         <div className="logo">
           <Link className="link" to="/">
-            <img src={active || pathname !== "/" ? "/imgs/bluelogo2.png": "/imgs/whitelogo2.png"} alt="logo" />
+            <img
+              src={
+                active || pathname !== "/"
+                  ? "/imgs/bluelogo2.png"
+                  : "/imgs/whitelogo2.png"
+              }
+              alt="logo"
+            />
             <span className="text">SkillSwap</span>
           </Link>
         </div>
@@ -41,37 +48,46 @@ function Navbar() {
           <span>Community</span>
           <span>Learn a skill</span>
           <span>Exchange services</span>
-          {!currentUser?.isSeller || currentUser != null && <span>Become Member</span>}
+          {!currentUser?.isSeller ||
+            (currentUser != null && <span>Become Member</span>)}
           {currentUser ? (
-            <div className="user" onClick={()=>setOpen(!open)}>
+            <div className="user" onClick={() => setOpen(!open)}>
               <span>{currentUser?.username}</span>
-              {open && <div className="options">
-                {currentUser.isSeller && (
-                  <>
-                    <Link className="link" to="/myskills">
-                      Skills
-                    </Link>
-                    <Link className="link" to="/add">
-                      Add New Skills
-                    </Link>
-                  </>
-                )}
-                <Link className="link" to="/lessons">
-                  Lessons
-                </Link>
-                <Link className="link" to="/messages">
-                  Messages
-                </Link>
-                <Link className="link" to="/">
-                  Logout
-                </Link>
-              </div>}
+              {open && (
+                <div className="options">
+                  {currentUser.isSeller && (
+                    <>
+                      <Link className="link" to="/myskills">
+                        Skills
+                      </Link>
+                      <Link className="link" to="/add">
+                        Add New Skills
+                      </Link>
+                    </>
+                  )}
+                  <Link className="link" to="/lessons">
+                    Lessons
+                  </Link>
+                  <Link className="link" to="/messages">
+                    Messages
+                  </Link>
+                  <Link className="link" to="/">
+                    Logout
+                  </Link>
+                </div>
+              )}
             </div>
           ) : (
             <>
               <span>Sign in</span>
               <Link className="link" to="/register">
-                <button className={active || pathname !== "/" ? "button active" : "button"}>Join</button>
+                <button
+                  className={
+                    active || pathname !== "/" ? "button active" : "button"
+                  }
+                >
+                  Join
+                </button>
               </Link>
             </>
           )}

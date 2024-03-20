@@ -13,14 +13,9 @@ import Message from "./pages/message/Message";
 import MySkills from "./pages/mySkills/MySkills";
 import "./App.scss";
 
-import {
-  createBrowserRouter,
-  RouterProvider,
-  Outlet
-} from "react-router-dom";
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 
 function App() {
-
   const Layout = () => {
     return (
       <div className="app">
@@ -81,7 +76,6 @@ function App() {
   ]);
 
   return <RouterProvider router={router} />;
-
 }
 
-export default App
+export default App;
