@@ -104,24 +104,25 @@
   .menu {
     width: 100%;
     padding: 10px 0px;
-    display: flex;
+    // display: flex;
     // justify-content: space-between;
-    // gap: 0px;
+    gap: 0px;
     font-weight: 300;
+    font-size: 15px;
     color: gray;
     font-family: "Playfair Display", serif;
     // align-items: center;
     margin-left: 20%;
     // margin-right: 20%;
     // margin: auto;
-    span {
-      font-family: "Roboto Slab", serif;
-    }
-    .menuLink{
+    // span {
+    //   font-family: "Roboto Slab", serif;
+    // }
+    .link{
       padding-left: 2%;
       padding-right: 2%;
         
-      // font-family: "Roboto Slab", serif;
+      font-family: "Roboto Slab", serif;
       
     }
   }
