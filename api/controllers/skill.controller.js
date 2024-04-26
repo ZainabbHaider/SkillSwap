@@ -47,7 +47,17 @@ export const getSkills = async (req, res) => {
     }
 
     try {
-        const skills = await Skill.find(filters).sort({[q.sort]:-1});
+        let sortOrder = -1; // Default sort order
+
+        if (q.sort === "createdAt") {
+        sortOrder = 1; // Change sort order if q.sort is "createdAt"
+        }
+
+        const sort = {
+        [q.sort]: sortOrder
+        };
+
+        const skills = await Skill.find(filters).sort(sort);
         // if (!skill) return next(createError(404, "No Skills Available!"));
         res.status(200).send(skills);
     } catch (err) {

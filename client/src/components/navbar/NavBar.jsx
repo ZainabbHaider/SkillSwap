@@ -31,7 +31,7 @@ function Navbar() {
     try {
       await newRequest.post("/auths/logout");
       localStorage.setItem('currentuser', null);
-      Navigate("/")
+      navigate("/")
     } catch (err) {
       console.log(err);
     }
@@ -77,10 +77,10 @@ function Navbar() {
               {open && (
                 <div className="options">
                     
-                      <Link className="link" to="/myskills">
-                        Skills
+                      <Link className="link" to="/myskills" onClick={handleLinkClick}>
+                        My Skills
                       </Link>
-                      <Link className="link" to="/add">
+                      <Link className="link" to="/add" onClick={handleLinkClick}>
                         Add New Skills
                       </Link>
                     
@@ -138,7 +138,7 @@ function Navbar() {
             <Link className="link" to="/skills?category=Handycraft" onClick={handleLinkClick}>
               Handycraft
             </Link>
-            <Link className="link" to="/skills?category=Programming & Tech" onClick={handleLinkClick}>
+            <Link className="link" to="/skills?category=Technology" onClick={handleLinkClick}>
               Programming & Tech
             </Link>
             <Link className="link" to="/skills?category=Cooking" onClick={handleLinkClick}>

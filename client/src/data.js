@@ -29,7 +29,7 @@ export const cards = [
     },
     {
       id: 5,
-      title: "Musical Intruments",
+      title: "Music & Intruments",
       category: "MusicInstruments",
       desc: "Serenade the world",
       img: "https://images.pexels.com/photos/6671387/pexels-photo-6671387.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
@@ -57,8 +57,8 @@ export const cards = [
     },
     {
       id: 9,
-      title: "Technology",
-      category: "Programming & Tech",
+      title: "Programming & Tech",
+      category: "Technology",
       desc: "Learn the digital world",
       img: "https://images.pexels.com/photos/1181263/pexels-photo-1181263.jpeg?auto=compress&cs=tinysrgb&w=600",
     },

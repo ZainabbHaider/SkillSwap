@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import "./Skill.scss";
 import { Slider } from "infinite-react-carousel";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import newRequest from "../../utils/newRequest";
 import Reviews from "../../components/reviews/Reviews";
@@ -149,7 +149,8 @@ function Skill() {
               </div>
               <p>{skillData.shortDesc}</p>
             </div>
-            <button>Connect with me!</button>
+            {/* <button>Connect with me!</button> */}
+            <Link className="link" to="/messages"><button>Connect with me!</button></Link>
           </div>
         </div>
       )}
