@@ -1,0 +1,53 @@
+.reviews{
+    margin-top: 50px;
+    
+    .add{
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        .addForm{
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
+            input{
+                padding: 10px;
+                border: 1px solid lightgray;
+                border-radius: 5px;
+            }
+
+            select{
+                width: 200px;
+                padding: 10px;
+                align-self: flex-end;
+            }
+
+            h3{
+                align-self: flex-end;
+                padding: 0px;
+                width: 200px;
+            }
+
+            button{
+                align-self: flex-end;
+                width: 100px;
+                border-radius: 5px;
+                border: none;
+                padding: 10px;
+                background-color: #1dbf73;
+                color: white;
+                cursor: pointer;
+
+            }
+        }
+    }
+
+    hr{
+        height: 0;
+        border: 0.5px solid lightgray;
+        margin: 50px 0px;
+    }
+    
+}
