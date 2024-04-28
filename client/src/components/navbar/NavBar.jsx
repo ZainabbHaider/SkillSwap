@@ -31,7 +31,9 @@ function Navbar() {
     try {
       await newRequest.post("/auths/logout");
       localStorage.setItem('currentuser', null);
-      navigate("/")
+      // navigate("/")
+      window.location.reload();
+      window.location.href = "/";
     } catch (err) {
       console.log(err);
     }

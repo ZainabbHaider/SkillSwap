@@ -12,7 +12,10 @@ const Add = () => {
   const [files, setFiles] = useState([]);
   const [uploadingCover, setUploadingCover] = useState(false);
   const [uploadingImages, setUploadingImages] = useState(false);
+  const [error, setError] = useState(""); // State for error message
   const [state, dispatch] = useReducer(skillReducer, INITIAL_STATE);
+  const navigate = useNavigate();
+  const queryClient = useQueryClient();
 
   const handleChange = (e) => {
     dispatch({
@@ -28,17 +31,16 @@ const Add = () => {
     setUploadingCover(true);
     try {
       const cover = await upload(singleFile);
-
       setUploadingCover(false);
       dispatch({ type: "ADD_COVER", payload: { cover } });
     } catch (err) {
       console.log(err);
     }
   };
+
   const handleImagesUpload = async () => {
     setUploadingImages(true);
     try {
-
       const images = await Promise.all(
         [...files].map(async (file) => {
           if (!file || !(file instanceof File)) {
@@ -55,40 +57,50 @@ const Add = () => {
     }
   };
 
-  const navigate = useNavigate(); 
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-  const queryClient = useQueryClient();
+    // Check for required fields
+    for (const key in state) {
+      if (key !== "images" && key !== "lessons" &&  key!== "shortDesc" && state[key] === "") {
+        setError(`Please fill in all required fields (*)`);
+        return;
+      }
+    }
+
+    // Clear error if all fields are filled
+    setError("");
+
+    // Submit data if no errors
+    mutation.mutate(state);
+    navigate("/myskills");
+  };
 
   const mutation = useMutation({
     mutationFn: (skill) => {
-      return newRequest.post('/skills', skill)
+      return newRequest.post("/skills", skill);
     },
     onSuccess: () => {
       queryClient.invalidateQueries(["mySkills"]);
-    }
-  })
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    mutation.mutate(state);
-    navigate('/myskills');
-  }
+    },
+  });
   // console.log([...files])
   console.log(state)
   return (
     <div className="add">
       <div className="container">
         <h1>Add New Skill</h1>
+        {error && <p className="error">{error}</p>} {/* Display error message */}
         <div className="sections">
           <div className="info">
-            <label htmlFor="">Title</label>
+            <label htmlFor="">Title *</label>
             <input
               type="text"
               name="title"
               placeholder="e.g. I will do something I'm really good at"
               onChange={handleChange}
             />
-            <label htmlFor="">Category</label>
+            <label htmlFor="">Category *</label>
             <select name="category" id="category" onChange={handleChange}>
               <option value="Handycraft">Handycraft</option>
               <option value="Sports">Sports</option>
@@ -105,7 +117,7 @@ const Add = () => {
             </select>
             <div className="images">
               <div className="imagesInputs">
-                <label htmlFor="">Cover Image</label>
+                <label htmlFor="">Cover Image *</label>
                 <input
                   type="file"
                   onChange={(e) => setSingleFile(e.target.files[0])}
@@ -115,7 +127,7 @@ const Add = () => {
                 {uploadingCover ? "uploading" : "Upload"}
               </button>
             </div>
-            <label htmlFor="">Description</label>
+            <label htmlFor="">Description *</label>
             <textarea
               name="desc"
               id=""

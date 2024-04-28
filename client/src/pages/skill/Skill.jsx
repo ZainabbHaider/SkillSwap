@@ -81,10 +81,12 @@ function Skill() {
             </div>
 
             <Slider slidesToShow={1} arrowsScroll={1} className="slider">
-              {skillData.images.map((img) => (
-                <img key={img} src={img} alt="" />
-              ))}
-            </Slider>
+            {skillData.images.length > 0 ? (
+              skillData.images.map((img) => <img key={img} src={img} alt="" />)
+            ) : (
+              <img src="../public/imgs/nothing.jpg" alt="No Image" />
+            )}
+          </Slider>
 
             <h2>About This Gig</h2>
             <p>{skillData.desc}</p>
@@ -147,7 +149,7 @@ function Skill() {
                 />
                 <h2>{userData.username}</h2>
               </div>
-              <p>{skillData.shortDesc}</p>
+              <p>{skillData.shortDesc || ""}</p>
             </div>
             {/* <button>Connect with me!</button> */}
             <Link className="link" to="/messages"><button>Connect with me!</button></Link>

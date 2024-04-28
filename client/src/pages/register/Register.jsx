@@ -4,8 +4,10 @@ import "./Register.scss";
 import newRequest from "../../utils/newRequest";
 import { useNavigate } from "react-router-dom";
 
+
 function Register() {
-  const [file, setFile] = useState(null);
+  const [file, setFile] = useState(undefined);
+  const [uploadingCover, setUploadingCover] = useState(false);
   const [user, setUser] = useState({
     username: "",
     email: "",
@@ -15,8 +17,22 @@ function Register() {
     phone: "",
     desc: "",
   });
+  const [error, setError] = useState("");
 
   const navigate = useNavigate();
+
+  const handleCoverUpload = async () => {
+    setUploadingCover(true);
+    try {
+      const cover = await upload(file);
+      setUser((prev) => {
+        return { ...prev, img: cover };
+      });
+      setUploadingCover(false);
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   const handleChange = (e) => {
     setUser((prev) => {
@@ -24,49 +40,74 @@ function Register() {
     });
   };
 
-  // const handleSeller = (e) => {
-  //   setUser((prev) => {
-  //     return { ...prev, isSeller: e.target.checked };
-  //   });
-  // };
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const url = await upload(file);
+    // Check if all required fields are filled
+    for (const key in user) {
+      if (key !== "phone" && key !== "desc" && key !== "img" && user[key] === "") {
+        console.log(key, user);
+        setError(`Please fill in all required fields (*)`);
+        return;
+      }
+    }
+
+    // const url = await upload(file);
+    // console.log(url);
     try {
       await newRequest.post("/auths/register", {
-        ...user,
-        img: url,
+        ...user
       });
-      navigate("/")
+      navigate("/");
     } catch (err) {
       console.log(err);
     }
   };
+  console.log(user);
+  // console.log(url);
   return (
     <div className="register">
       <form onSubmit={handleSubmit}>
         <div className="left">
           <h1>Create a new account</h1>
-          <label htmlFor="">Username</label>
+          {error && <p className="error">{error}</p>}
+          <label htmlFor="">
+            Username<span>*</span>
+          </label>
           <input
             name="username"
             type="text"
-            placeholder="johndoe"
+            placeholder="name"
             onChange={handleChange}
           />
-          <label htmlFor="">Email</label>
+          <label htmlFor="">
+            Email<span>*</span>
+          </label>
           <input
             name="email"
             type="email"
             placeholder="email"
             onChange={handleChange}
           />
-          <label htmlFor="">Password</label>
+          <label htmlFor="">
+            Password<span>*</span>
+          </label>
           <input name="password" type="password" onChange={handleChange} />
-          <label htmlFor="">Profile Picture</label>
-          <input type="file" onChange={(e) => setFile(e.target.files[0])} />
-          <label htmlFor="">Country</label>
+          <div className="images">
+            <div className="imagesInputs">
+              <label htmlFor=""> Profile Picture</label>
+              <input
+                type="file"
+                onChange={(e) => setFile(e.target.files[0])}
+              />
+            </div>
+            <button onClick={handleCoverUpload}>
+              {uploadingCover ? "uploading" : "Upload"}
+            </button>
+          </div>
+          <label htmlFor="">
+            Country<span>*</span>
+          </label>
           <input
             name="country"
             type="text"
@@ -74,16 +115,9 @@ function Register() {
             onChange={handleChange}
           />
           <button type="submit">Register</button>
+          {/* {error && <p className="error">{error}</p>} */}
         </div>
         <div className="right">
-          {/* <h1>I want to become a seller</h1>
-          <div className="toggle">
-            <label htmlFor="">Activate the seller account</label>
-            <label className="switch">
-              <input type="checkbox" onChange={handleSeller} />
-              <span className="slider round"></span>
-            </label>
-          </div> */}
           <label htmlFor="">Phone Number</label>
           <input
             name="phone"

@@ -36,7 +36,7 @@ const SkillSchema = new Schema({
   },
   shortDesc: {
     type: String,
-    required: true,
+    required: false,
   },
   lessons:{
     type: Number,

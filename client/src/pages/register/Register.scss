@@ -102,6 +102,26 @@
         //     transform: translateX(26px);
         //   }
         // }
+        .error{
+          color: red;
+        }
+        .images{
+          display: flex;
+          gap: 20px;
+          padding-top: 2px;
+          button{
+              margin-top: 10%;
+              border-radius: 5px;
+              height: 30px;
+              width: 110px;
+              padding: 9px;
+              color: black;
+              font-weight: 500;
+              font-size: 15px;
+              background-color: rgb(232, 226, 226);
+              cursor: pointer;
+          }
+        }
       }
     }
   }
