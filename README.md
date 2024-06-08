@@ -26,7 +26,7 @@ Here are some screenshots of the SkillSwap website:
 ![image](https://github.com/ZainabbHaider/SkillSwap/assets/89449023/a1ecc811-697c-4410-be5c-7f01f23546af)
 
 ### Skill Listings Page
-![image](https://github.com/ZainabbHaider/SkillSwap/assets/89449023/2a107099-3fa0-4870-a31c-401ca2449e7b)
+![image](https://github.com/ZainabbHaider/SkillSwap/assets/89449023/dc753669-1f23-4ba4-bac0-53c1f2cd1f48)
 
 
 ### My Skills Page
